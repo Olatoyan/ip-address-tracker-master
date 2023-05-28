@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | IP Address Tracker</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="primary__heading">IP Address Tracker</h1>
+        <div class="input__box">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Search for any IP address or domain"
+          />
+          <div class="icon__box">
+            <img
+              src="images/icon-arrow.svg"
+              alt="search icon"
+              class="search__icon"
+            />
+          </div>
+        </div>
+      </header>
+      <section class="info__section">
+        <div class="info__container">
+          <div class="info__box">
+            <h2 class="secondary__heading">IP Address</h2>
+            <p class="info__text ip-address">192.212.174.101</p>
+          </div>
+          <div class="info__box">
+            <h2 class="secondary__heading">Location</h2>
+            <p class="info__text location">Brooklyn, NY</p>
+          </div>
+          <div class="info__box">
+            <h2 class="secondary__heading">Timezone</h2>
+            <p class="info__text timezone">
+              UTC <span class="time">-05:00</span>
+            </p>
+          </div>
+          <div class="info__box">
+            <h2 class="secondary__heading">Isp</h2>
+            <p class="info__text isp">SpaceX</p>
+          </div>
+        </div>
+      </section>
+      <section id="map"></section>
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>
