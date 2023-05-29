@@ -12,8 +12,6 @@ const address = async function (ip = "") {
       `https://geo.ipify.org/api/v2/country,city?apiKey=at_GYLwFZ0D18TfNHvx6hxDg9rF6tO11&ipAddress=${ip}`
     );
     res = await data.json();
-    console.log(res);
-    console.log(res.location);
     const { lat } = res.location;
     const { lng } = res.location;
     const ipAddress = document.querySelector(".ip-address");
@@ -31,12 +29,9 @@ const address = async function (ip = "") {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(position);
           const { latitude, longitude } = position.coords;
-          console.log(latitude, longitude);
           const userCoords = [latitude, longitude];
           const ipCoords = [lat, lng];
-          console.log(userCoords, ipCoords);
 
           if (!map) {
             map = L.map("map").setView(userCoords, 13);
@@ -73,22 +68,18 @@ const address = async function (ip = "") {
     }
   } catch (error) {
     alert(`Error : IP Address is invalid`);
-    console.log(res);
-    console.log(error);
   }
 };
 
 address();
 
 searchIcon.addEventListener("click", function () {
-  console.log(searchInput.value);
   address(searchInput.value);
   searchInput.value = "";
 });
 
 document.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
-    console.log(searchInput.value);
     address(searchInput.value);
     searchInput.value = "";
   }
