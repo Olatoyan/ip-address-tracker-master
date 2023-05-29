@@ -19,6 +19,7 @@ body {
 .container {
   background-color: #2b2b2b;
   height: 62rem;
+  max-height: 100vh;
 }
 .header {
   background-image: url(../images/pattern-bg-desktop.png);
@@ -41,7 +42,7 @@ body {
   display: flex;
   width: 25%;
   border-radius: 0.8rem;
-
+  width: 50rem;
   overflow: hidden;
   /* align-items: center; */
 }
@@ -57,6 +58,7 @@ body {
 }
 .icon__box {
   padding: 0.9rem 1.7rem;
+  cursor: pointer;
 
   /* padding: 2rem; */
   align-self: center;
@@ -81,6 +83,10 @@ body {
   display: flex;
   background-color: #fff;
   padding: 1.5rem 0;
+  width: 90rem;
+  border-radius: 1.4rem;
+
+  /* max-width: 160rem; */
 }
 .info__box {
   padding: 1.3rem 2rem 1.3rem 2rem;
@@ -119,6 +125,51 @@ body {
 
 #map {
   height: 100%;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 1rem;
+  /* font-weight: 500; */
+}
+
+/* **************
+ MEDIA QUERIES
+****************/
+
+@media only screen and (max-width: 60em) {
+  .input__box {
+    width: auto;
+  }
+
+  /* .info__section {
+    top: 18%;
+  } */
+
+  .info__container {
+    width: 30rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info__text {
+    font-size: 1.4rem;
+  }
+  .info__box {
+    gap: 0.5rem;
+  }
+  .info__box:not(:last-child) {
+    padding: 0 0 2rem 0;
+  }
+  .info__box:last-child {
+    padding: 0;
+  }
+
+  .info__inside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
 
 /* .attribution {
