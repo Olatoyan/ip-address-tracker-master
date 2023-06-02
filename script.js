@@ -2,12 +2,22 @@
 
 const searchInput = document.querySelector(".search__input");
 const searchIcon = document.querySelector(".icon__box");
+const loadingSpinner = document.querySelector(".loading-spinner");
+
+const showLoadingSpinner = function () {
+  loadingSpinner.style.display = "block";
+};
+
+const hideLoadingSpinner = function () {
+  loadingSpinner.style.display = "none";
+};
 
 let marker;
 let res;
 let map;
 const address = async function (ip = "") {
   try {
+    showLoadingSpinner();
     const data = await fetch(
       `https://geo.ipify.org/api/v2/country,city?apiKey=at_GYLwFZ0D18TfNHvx6hxDg9rF6tO11&ipAddress=${ip}`
     );
@@ -66,6 +76,7 @@ const address = async function (ip = "") {
         }
       );
     }
+    hideLoadingSpinner();
   } catch (error) {
     alert(`Error : IP Address is invalid`);
   }
